@@ -2,35 +2,28 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Navbar from './Components/Navbar'
 
 function App() {
   const [count, setCount] = useState(0)
-  useEffect(()=>{
-    alert("2nd render")
+  
+  useEffect(() => {
+    alert("Starting time rendering useEffect")
   },[])
-    let count_increase=count;
-    var arr=new Array(20000)
-    arr[19999]="mj"
-    // alert(arr[19999])
-    if (arr) {
-      arr.map((item,i)=>{
-        if (item==="mj") {
-          
-          
-        }
-      })
-    }
-    alert("1st render  ")
+  // This is first render
+  useEffect(() => {
+    alert("Every time rendering useEffect ")
+  })
 
-    
- 
-  // This useEffect is render when user can click count button then it is render
-  // useEffect(()=>{
-  //   alert("count is increased")
-  // },[count])
+// This useEffect is render when user can click count button then it is render
+  useEffect(()=>{
+    alert("App count is increased")
+  },[count])
 
   return (
     <>
+    
+    <Navbar Component={"NavBar"}></Navbar>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
